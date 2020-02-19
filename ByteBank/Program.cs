@@ -22,7 +22,12 @@ namespace ByteBank
             roberta.Nome = "Roberta";
             carlos.CPF = "987.654.321-80";
             roberta.Salario = 5000;
-            
+
+            Funcionario robertaTeste = roberta;
+
+            Console.WriteLine("Bonificacao através da referência Diretor: " + roberta.GetBonificacao());
+            Console.WriteLine("Bonificacao através da referência Funcionário: " + robertaTeste.GetBonificacao());
+
             gerenciador.Registrar(roberta);
 
 
