@@ -20,6 +20,7 @@ namespace ByteBank
             var roberta = new Diretor();
             
             roberta.Nome = "Roberta";
+            carlos.CPF = "987.654.321-80";
             roberta.Salario = 5000;
             
             gerenciador.Registrar(roberta);
