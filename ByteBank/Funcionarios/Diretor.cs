@@ -9,7 +9,7 @@ namespace ByteBank
     {
         public override double GetBonificacao()
         {
-            return this.Salario;
+            return Salario + base.GetBonificacao();
         }
     }
 }
