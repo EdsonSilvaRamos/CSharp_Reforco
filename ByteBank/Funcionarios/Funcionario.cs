@@ -1,6 +1,6 @@
 ﻿namespace ByteBank.Funcionarios
 {
-    public class Funcionario
+    public abstract class Funcionario
     {        
         public static int TotalDeFunfionarios { get; private set; }
 
