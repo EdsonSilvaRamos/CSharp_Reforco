@@ -28,11 +28,15 @@ namespace ByteBank
             var camila = new GerenteDeContas("326.985.628-89");
             camila.Nome = "Camila";
 
+            var edson = new Desenvolvedor("347.846.828-05");
+            edson.Nome = "Edson";
+
             gerenciadorBonificacao.Registrar(pedro);
             gerenciadorBonificacao.Registrar(roberta);
             gerenciadorBonificacao.Registrar(igor);
             gerenciadorBonificacao.Registrar(camila);
-
+            gerenciadorBonificacao.Registrar(edson);
+                        
             Console.WriteLine("Total de bonificações do mês: " + gerenciadorBonificacao.GetTotalBonificacao());
         }
     }

@@ -16,16 +16,8 @@
             TotalDeFunfionarios++;
         }
 
-        public virtual void AumentaSalario()
-        {
-            //Salario = Salario + (Salario * 0.1);
-            //Salario = Salario * 1.1;
-            Salario *= 1.1;
-        }
+        public abstract void AumentaSalario();
 
-        public virtual double GetBonificacao()
-        {            
-            return this.Salario * 0.10;
-        }
+        public abstract double GetBonificacao();
     }
 }
