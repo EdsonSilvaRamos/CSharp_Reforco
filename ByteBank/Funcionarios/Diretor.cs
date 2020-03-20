@@ -7,10 +7,16 @@ namespace ByteBank
 {
     public class Diretor : Funcionario
     {
+        public string Senha { get; set; }
         public Diretor(string cpf) : base(5000, cpf)
         {
 
         }
+
+        public bool Autenticar(string senha)
+        {
+            return this.Senha == senha;
+        } 
 
         public override void AumentaSalario()
         {
