@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ByteBank.Funcionarios
 {
-    public class GerenteDeContas : Autenticavel
+    public class GerenteDeContas : FuncionarioAutenticavel
     {
         public GerenteDeContas(string cpf) : base(4000, cpf)
         {

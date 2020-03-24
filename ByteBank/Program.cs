@@ -25,10 +25,14 @@ namespace ByteBank
 
             var camila = new GerenteDeContas("326.985.628-89");
             camila.Nome = "Camila";
-            camila.Senha = "abc";            
+            camila.Senha = "abc";
+
+            var parceiro = new ParceiroComercial();
+            parceiro.Senha = "123456";
 
             sistemaInterno.Logar(roberta, "123");
             sistemaInterno.Logar(camila, "abc");
+            sistemaInterno.Logar(parceiro, "123456");
 
         }
 
