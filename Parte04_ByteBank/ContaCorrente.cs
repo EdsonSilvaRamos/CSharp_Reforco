@@ -8,25 +8,9 @@
 
         public static int TotalDeContasCriadas { get; private set; }
 
-
-        private int _agencia;
-        public int Agencia
-        {
-            get
-            {
-                return _agencia;
-            }
-            set
-            {
-                if (value <= 0)
-                {
-                    return;
-                }
-
-                _agencia = value;
-            }
-        }
-        public int Numero { get; set; }
+                
+        public int Agencia { get; }
+        public int Numero { get; }
 
         private double _saldo = 100;
 
