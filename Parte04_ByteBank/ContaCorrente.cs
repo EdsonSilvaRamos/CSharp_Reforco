@@ -1,4 +1,6 @@
-﻿namespace ByteBank
+﻿using System;
+
+namespace ByteBank
 {
     public class ContaCorrente
     {
@@ -34,6 +36,16 @@
 
         public ContaCorrente(int agencia, int numero)
         {
+            if (agencia <= 0)
+            {
+                throw new ArgumentException("A agência não pode ser menor ou igual a zero.");
+            }
+
+            if (numero <= 0)
+            {
+                throw new ArgumentException("o número não pode ser menor ou igual a zero.");
+            }
+
             Agencia = agencia;
             Numero = numero;
 

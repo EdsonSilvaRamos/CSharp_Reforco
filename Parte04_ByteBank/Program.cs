@@ -7,16 +7,15 @@ namespace Parte04_ByteBank
     {
         public static void Main(string[] args)
         {
-            //var conta = new ContaCorrente(123, 12345);
-            //Console.WriteLine(ContaCorrente.TotalDeContasCriadas);
-
             try
             {
-                Metodo();
+                //Metodo();
+                var conta = new ContaCorrente(0, 0);
             }
-            catch (DivideByZeroException)
+            catch (ArgumentException ex)
             {
-                Console.WriteLine("Não pode ocorrer uma divisão por zero.");
+                Console.WriteLine("Ocorreu uma exceção!");
+                Console.WriteLine(ex.Message);
             }
             catch (Exception ex)
             {
