@@ -10,13 +10,24 @@ namespace Parte04_ByteBank
             try
             {
                 //Metodo();
-                var conta = new ContaCorrente(0, 0);
+                var conta = new ContaCorrente(123, 1234);
+
+                conta.Depositar(50);
+                Console.WriteLine("Saldo: " + conta.Saldo);
+                conta.Sacar(500);
+
             }
             catch (ArgumentException ex)
             {
-                Console.WriteLine("Ocorreu uma exceção! Argumento: " + ex.ParamName);
+                Console.WriteLine("Ocorreu uma exceção do tipo ArgumentException");
+                Console.WriteLine("Argumento com problema: " + ex.ParamName);
                 Console.WriteLine(ex.Message);
             }
+            catch (SaldoInsuficienteException ex)
+            {
+                Console.WriteLine("Execeção do tipo SaldoInsuficienteException");
+                Console.WriteLine(ex.Message);
+            }       
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
