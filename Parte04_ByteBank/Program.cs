@@ -14,7 +14,7 @@ namespace Parte04_ByteBank
             }
             catch (ArgumentException ex)
             {
-                Console.WriteLine("Ocorreu uma exceção!");
+                Console.WriteLine("Ocorreu uma exceção! Argumento: " + ex.ParamName);
                 Console.WriteLine(ex.Message);
             }
             catch (Exception ex)

@@ -38,12 +38,12 @@ namespace ByteBank
         {
             if (agencia <= 0)
             {
-                throw new ArgumentException("A agência não pode ser menor ou igual a zero.");
+                throw new ArgumentException("A agência não pode ser menor ou igual a zero.", nameof(agencia));
             }
 
             if (numero <= 0)
             {
-                throw new ArgumentException("o número não pode ser menor ou igual a zero.");
+                throw new ArgumentException("o número não pode ser menor ou igual a zero.", nameof(numero));
             }
 
             Agencia = agencia;
