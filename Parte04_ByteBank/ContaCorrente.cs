@@ -10,8 +10,12 @@ namespace ByteBank
 
         public static int TotalDeContasCriadas { get; private set; }
 
-                
+        public static int ContadorDeSaquesNaoPermitidos { get; private set; }
+
+        public static int ContadorDeTransferenciasNaoPermitidas { get; private set; }
+
         public int Agencia { get; }
+
         public int Numero { get; }
 
         private double _saldo = 100;
@@ -33,7 +37,6 @@ namespace ByteBank
             }
         }
 
-
         public ContaCorrente(int agencia, int numero)
         {
             if (agencia <= 0)
@@ -53,17 +56,17 @@ namespace ByteBank
             TaxaOperacao = 30 / TotalDeContasCriadas;
         }
 
-
         public void Sacar(double valor)
         {
             if (valor < 0)
             {
-                throw new SaldoInsuficienteException(Saldo, valor);
+                throw new ArgumentException("Valor inválido para saque, argumento: " + nameof(valor));
             }
             
             if (_saldo < valor)
             {
-                throw new SaldoInsuficienteException("Saldo insuficiente para saque no valor de: " + valor);
+                ContadorDeSaquesNaoPermitidos++;
+                throw new SaldoInsuficienteException(Saldo, valor);
             }
 
             _saldo -= valor;            
@@ -81,13 +84,20 @@ namespace ByteBank
             {
                 throw new ArgumentException("Valor inválido para transferência, argumento: " + nameof(valor));
             }
-            
-            if (_saldo < valor)
-            {
-                throw new SaldoInsuficienteException("Saldo insuficiente para transferência no valor de: " + valor);
-            }
 
-            Sacar(valor);
+
+            try
+            {
+                Sacar(valor);
+            }
+            catch (SaldoInsuficienteException)
+            {
+                ContadorDeTransferenciasNaoPermitidas++;
+                throw;
+            }
+            
+            
+            
             contaDestino.Depositar(valor);
             
         }

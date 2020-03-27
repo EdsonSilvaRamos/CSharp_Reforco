@@ -13,12 +13,12 @@ namespace Parte04_ByteBank
                 var conta = new ContaCorrente(123, 1234);
                 var conta2 = new ContaCorrente(321, 4321);
 
-                conta2.Transferir(-10, conta);
+                conta2.Transferir(10000, conta);
 
-                conta.Depositar(50);
-                Console.WriteLine("Saldo: " + conta.Saldo);
-                conta.Sacar(-500);
-                Console.WriteLine("Saldo: " + conta.Saldo);
+                //conta.Depositar(50);
+                //Console.WriteLine("Saldo: " + conta.Saldo);
+                //conta.Sacar(-500);
+                //Console.WriteLine("Saldo: " + conta.Saldo);
 
 
             }
@@ -29,6 +29,11 @@ namespace Parte04_ByteBank
             }
             catch (SaldoInsuficienteException ex)
             {
+                Console.WriteLine("Saldo: " + ex.Saldo);
+                Console.WriteLine("Valor do saque: " + ex.ValorSaque);
+
+                Console.WriteLine(ex.StackTrace);
+
                 Console.WriteLine("Execeção do tipo SaldoInsuficienteException");
                 Console.WriteLine(ex.Message);
             }       
