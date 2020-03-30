@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Parte04_ByteBank;
+using System;
 
 namespace ByteBank
 {
@@ -90,10 +91,10 @@ namespace ByteBank
             {
                 Sacar(valor);
             }
-            catch (SaldoInsuficienteException)
+            catch (OperacaoFincanceiraException ex)
             {
                 ContadorDeTransferenciasNaoPermitidas++;
-                throw;
+                throw new OperacaoFincanceiraException("Operação não realizada!", ex);
             }
             
             

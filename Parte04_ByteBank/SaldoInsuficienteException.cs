@@ -1,10 +1,10 @@
-﻿using System;
-using System.Runtime.Serialization;
+﻿using Parte04_ByteBank;
+using System;
 
 namespace ByteBank
 {
     [Serializable]
-    public class SaldoInsuficienteException : Exception
+    public class SaldoInsuficienteException : OperacaoFincanceiraException
     {
         public double Saldo { get; }
         public double ValorSaque { get; }
@@ -13,7 +13,8 @@ namespace ByteBank
         {
         }
 
-        public SaldoInsuficienteException(string message) : base(message)
+        public SaldoInsuficienteException(string mensagem) 
+            : base(mensagem)
         {
         }
 
@@ -22,6 +23,11 @@ namespace ByteBank
         {
             this.Saldo = saldo;
             this.ValorSaque = valorSaque;
+        }
+
+        public SaldoInsuficienteException(string mensagem, Exception excecaoInterna)
+            :base(mensagem, excecaoInterna)
+        {
         }
     }
 }

@@ -9,41 +9,26 @@ namespace Parte04_ByteBank
         {
             try
             {
-                //Metodo();
-                var conta = new ContaCorrente(123, 1234);
+                var conta1 = new ContaCorrente(123, 1234);
                 var conta2 = new ContaCorrente(321, 4321);
 
-                conta2.Transferir(10000, conta);
-
-                //conta.Depositar(50);
-                //Console.WriteLine("Saldo: " + conta.Saldo);
-                //conta.Sacar(-500);
-                //Console.WriteLine("Saldo: " + conta.Saldo);
-
-
+                //conta1.Transferir(10000, conta2);
+                conta2.Sacar(10000);
             }
-            catch (ArgumentException ex)
-            {
-                Console.WriteLine("Ocorreu uma exceção do tipo ArgumentException");
-                Console.WriteLine(ex.Message);
-            }
-            catch (SaldoInsuficienteException ex)
-            {
-                Console.WriteLine("Saldo: " + ex.Saldo);
-                Console.WriteLine("Valor do saque: " + ex.ValorSaque);
-
-                Console.WriteLine(ex.StackTrace);
-
-                Console.WriteLine("Execeção do tipo SaldoInsuficienteException");
-                Console.WriteLine(ex.Message);
-            }       
-            catch (Exception ex)
+            catch (OperacaoFincanceiraException ex)
             {
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
-                Console.WriteLine("Ocorreu um erro!");
+
+                //Console.WriteLine(Environment.NewLine);
+                //Console.WriteLine(ex.InnerException.Message);
+                //Console.WriteLine(ex.InnerException.StackTrace);
+                //Console.WriteLine(Environment.NewLine);
+
             }
 
+            Console.WriteLine(Environment.NewLine);
+            Console.WriteLine("Digite a tecla Enter para sair!");
             Console.ReadLine();
         }
 
