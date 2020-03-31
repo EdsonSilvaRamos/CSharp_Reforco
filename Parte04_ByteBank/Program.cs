@@ -1,6 +1,5 @@
 ﻿using ByteBank;
 using System;
-using System.IO;
 
 namespace Parte04_ByteBank
 {
@@ -8,7 +7,16 @@ namespace Parte04_ByteBank
     {
         public static void Main(string[] args)
         {
-            CarregarContas();
+            try
+            {
+                CarregarContas();
+            }
+            catch (Exception)
+            {
+
+                Console.WriteLine("CATCH NO MÉTODO MAIN!!!");
+            }
+            
 
             Console.WriteLine(Environment.NewLine);
             Console.WriteLine("Digite a tecla Enter para sair!");
@@ -17,28 +25,37 @@ namespace Parte04_ByteBank
 
         public static void CarregarContas()
         {
-            LeitorDeArquivo leitor = null;
 
-            try
+            using (var leitor = new LeitorDeArquivo("teste.txt"))
             {
-                leitor = new LeitorDeArquivo("contas.txt");
+                leitor.LerProximaLinha();
+            }
+            
+            
+            // -----------------------------------------------------
+            
+            
+            //LeitorDeArquivo leitor = null;
+            //try
+            //{
+            //    leitor = new LeitorDeArquivo("contas.txt");
 
-                leitor.LerProximaLinha();
-                leitor.LerProximaLinha();
-                leitor.LerProximaLinha();
+            //    leitor.LerProximaLinha();
+            //    leitor.LerProximaLinha();
+            //    leitor.LerProximaLinha();
                 
-            }
-            catch (IOException)
-            {
-                Console.WriteLine("Exceção do tipo IOException capturada e tratada!");
-            }
-            finally
-            {
-                if (leitor != null)
-                {
-                    leitor.Fechar();
-                }                
-            }            
+            //}
+            //catch (IOException)
+            //{
+            //    Console.WriteLine("Exceção do tipo IOException capturada e tratada!");
+            //}
+            //finally
+            //{
+            //    if (leitor != null)
+            //    {
+            //        leitor.Fechar();
+            //    }                
+            //}            
 
         }
 
