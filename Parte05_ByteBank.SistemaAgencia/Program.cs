@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ByteBank;
+using System;
 
 namespace Parte05_ByteBank.SistemaAgencia
 {
@@ -6,7 +7,12 @@ namespace Parte05_ByteBank.SistemaAgencia
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var conta = new ContaCorrente(123, 1234);
+
+            Console.WriteLine(conta.Numero);
+
+            Console.WriteLine("Digite enter para sair!");
+            Console.ReadLine();
         }
     }
 }
