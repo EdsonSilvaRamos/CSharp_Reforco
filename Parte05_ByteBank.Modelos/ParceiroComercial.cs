@@ -1,17 +1,16 @@
 ﻿using ByteBank.Sistemas;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Parte05_ByteBank.Modelos;
 
 namespace ByteBank
 {
     public class ParceiroComercial : IAutenticavel
 
     {
+        private AutenticacaoHelper _autenticacaoHelper = new AutenticacaoHelper(); 
         public string Senha { get; set; }
         public bool Autenticar(string senha)
         {
-            return Senha == senha;
+            return _autenticacaoHelper.CompararSenhas(Senha, senha);
         }
     }
 }

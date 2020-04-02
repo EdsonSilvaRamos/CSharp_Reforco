@@ -18,6 +18,6 @@
 
         public abstract void AumentaSalario();
 
-        public abstract double GetBonificacao();
+        internal protected abstract double GetBonificacao();
     }
 }
