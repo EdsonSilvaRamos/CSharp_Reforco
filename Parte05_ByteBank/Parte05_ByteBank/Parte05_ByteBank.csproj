@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <Reference Include="Parte05_ByteBank.Modelos">
-      <HintPath>..\..\Bibliotecas\Parte05_ByteBank.Modelos.dll</HintPath>
+      <HintPath>..\..\..\Bibliotecas\Parte05_ByteBank.Modelos.dll</HintPath>
     </Reference>
   </ItemGroup>
 
