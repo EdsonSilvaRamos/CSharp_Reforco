@@ -11,6 +11,10 @@ namespace Parte05_ByteBank
 
             var conta2 = new ContaCorrente(321, 4321);
 
+            conta2.Sacar(20);
+
+            
+
             Console.WriteLine(conta.Saldo);
             Console.ReadLine();
 
