@@ -3,6 +3,9 @@ using System;
 
 namespace ByteBank
 {
+    /// <summary>
+    /// Define uma Conta Corrente do banco ByteBank.
+    /// </summary>
     public class ContaCorrente
     {
         public Cliente Titular { get; set; }
@@ -38,6 +41,11 @@ namespace ByteBank
             }
         }
 
+        /// <summary>
+        /// Cria uma instância de ContaCorrente com os argumentos utilizados;
+        /// </summary>
+        /// <param name="agencia">Representa o valor da propriedade <see cref="Agencia"/> e deve possuir um valor maior que zero.</param>
+        /// <param name="numero">Representa o valor da propriedade <see cref="Numero"/> e deve possuir um valor maior que zero.</param>
         public ContaCorrente(int agencia, int numero)
         {
             if (agencia <= 0)
