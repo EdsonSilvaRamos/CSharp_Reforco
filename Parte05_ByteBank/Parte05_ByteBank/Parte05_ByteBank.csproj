@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Parte05_ByteBank.Modelos">
+      <HintPath>..\..\Bibliotecas\Parte05_ByteBank.Modelos.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
