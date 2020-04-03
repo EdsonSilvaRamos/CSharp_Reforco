@@ -1,5 +1,6 @@
 ﻿using ByteBank;
 using ByteBank.Funcionarios;
+using Humanizer;
 using System;
 
 namespace Parte05_ByteBank.SistemaAgencia
@@ -8,12 +9,12 @@ namespace Parte05_ByteBank.SistemaAgencia
     {
         public static void Main(string[] args)
         {
-            var dataFimPagamento = new DateTime(2020, 4, 3);
+            var dataFimPagamento = new DateTime(2020, 6, 20);
             var dataCorrente = DateTime.Now;
 
             var diferenca = dataFimPagamento - dataCorrente;
 
-            var mensagem = "Vencimento em: " + GetIntervaloTempoLegivel(diferenca);
+            var mensagem = "Vencimento em: " + TimeSpanHumanizeExtensions.Humanize(diferenca);
 
             Console.WriteLine("Data do vencimento: " + dataFimPagamento);
             Console.WriteLine("Data corrente: " + dataCorrente);
@@ -22,33 +23,6 @@ namespace Parte05_ByteBank.SistemaAgencia
 
             Console.WriteLine(Environment.NewLine + "Tecle enter para sair!");
             Console.ReadLine();
-        }
-
-        public static string GetIntervaloTempoLegivel(TimeSpan diferencaDaData)
-        {
-            if (diferencaDaData.Days > 30)
-            {
-                int quantidadeMeses = diferencaDaData.Days / 30;
-                if (quantidadeMeses == 1)
-                {
-                    return quantidadeMeses + " mês.";
-                }
-                return quantidadeMeses + " meses.";
-            }
-            else if(diferencaDaData.Days > 7 )
-            {
-                int quantidadeSemanas = diferencaDaData.Days / 7;
-                return quantidadeSemanas + " semanas.";
-            }
-            else if(diferencaDaData.Days == 1)
-            {
-                return diferencaDaData.Days + " dia.";
-            }
-            else if(diferencaDaData.Days < 1)
-            {
-                return diferencaDaData.Hours + " hora(s)";
-            }
-            return diferencaDaData.Days + " dias.";
-        }
+        }       
     }
 }

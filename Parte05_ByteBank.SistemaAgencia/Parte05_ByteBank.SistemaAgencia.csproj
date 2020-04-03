@@ -9,4 +9,10 @@
     <ProjectReference Include="..\Parte05_ByteBank.Modelos\Parte05_ByteBank.Modelos.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Humanizer">
+      <HintPath>..\..\Bibliotecas\Humanizer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
