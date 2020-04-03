@@ -6,13 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Parte05_ByteBank.Modelos\Parte05_ByteBank.Modelos.csproj" />
+    <PackageReference Include="Humanizer.Core" Version="2.7.9" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Humanizer">
-      <HintPath>..\..\Bibliotecas\Humanizer.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\Parte05_ByteBank.Modelos\Parte05_ByteBank.Modelos.csproj" />
   </ItemGroup>
 
 </Project>

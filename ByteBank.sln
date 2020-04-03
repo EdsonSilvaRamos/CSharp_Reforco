@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Parte04_ByteBank.Aula04", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parte05_ByteBank.Modelos", "Parte05_ByteBank.Modelos\Parte05_ByteBank.Modelos.csproj", "{29675A04-06A4-4FA9-B0ED-339D47BE566B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parte05_ByteBank.SistemaAgencia", "Parte05_ByteBank.SistemaAgencia\Parte05_ByteBank.SistemaAgencia.csproj", "{F11A0BFD-FCD6-46C3-AF6B-C993717B195F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Parte05_ByteBank.SistemaAgencia", "Parte05_ByteBank.SistemaAgencia\Parte05_ByteBank.SistemaAgencia.csproj", "{F11A0BFD-FCD6-46C3-AF6B-C993717B195F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
